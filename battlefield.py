@@ -16,21 +16,20 @@ class Battlefield:
 
     def battle_phase(self):
         
-        while self.dinosaur.attack_robot(self.robot):
-                print(f'Indominus attacked Bruticus.\n Bruticus health is now: {self.robot.health}')
+        while self.robot.health >= 0 or self.dinosaur.health >= 0:
+            self.dinosaur.attack_robot(self.robot)
+            print(f'Indominus attacked Bruticus.\n Bruticus health is now: {self.robot.health}')
             
-                if self.robot.attack_dinosaur(self.dinosaur):
-                    print(f'Bruticus attacked Indominus.\n Indominus health is now: {self.dinosaur.health}')
+            self.robot.attack_dinosaur(self.dinosaur)
+            print(f'Bruticus attacked Indominus.\n Indominus health is now: {self.dinosaur.health}')
             
-                elif self.robot.health <= 0 or self.dinosaur.health <= 0:
-                    display_winner = self.robot.health or self.dinosaur.health <= 0 
-                    print(display_winner)
+            self.display_winner()
                     
 
     def display_winner(self):
             
-            if self.dinosaur.health >= 1:
-                print(f'Opponent defeated!\n   ***{self.dinosaur.name} is the Victor!***')
+            if self.dinosaur.health >= 0:
+                print(f' ***{self.dinosaur.name} is the Victor!***')
             
-            elif self.robot.health >= 1:
-                print(f'Opponent defeated!\n   ***{self.robot.name} is the Victor!***')
+            elif self.robot.health >= 0:
+                print(f' ***{self.robot.name} is the Victor!***')

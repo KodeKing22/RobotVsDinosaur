@@ -9,7 +9,7 @@ class Robot:
         
         
     def attack_dinosaur(self, dinosaur):
-        self.dinosaur.health -= self.active_weapon 
+        dinosaur.health -= self.active_weapon.attack_power 
         
 
     # Additional names of robots Ratchet and Bluestreak
