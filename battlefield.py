@@ -12,11 +12,12 @@ class Battlefield:
         self.battle_phase()
 
     def display_welcome(self):
-        print('Welcome to the battle between Time and Technology!\nThere can only be one Victor!')
+        print('Welcome to the battle between Time an d Technology!\nThere can only be one Victor!')
 
     def battle_phase(self):
         
-        while self.robot.health >= 0 or self.dinosaur.health >= 0:
+        while self.robot.health >= 0:
+            
             self.dinosaur.attack_robot(self.robot)
             print(f'Indominus attacked Bruticus.\n Bruticus health is now: {self.robot.health}')
             
@@ -31,5 +32,5 @@ class Battlefield:
             if self.dinosaur.health >= 0:
                 print(f' ***{self.dinosaur.name} is the Victor!***')
             
-            elif self.robot.health >= 0:
+            elif self.robot.health == 0:
                 print(f' ***{self.robot.name} is the Victor!***')
