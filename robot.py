@@ -8,6 +8,8 @@ class Robot:
         self.active_weapon = Weapon('Brutal Blaster', 20)
         
         
-    def attack_dino(self, dinosaur):
-        dinosaur.health -= self.active_weapon
-        pass
+    def attack_dinosaur(self, dinosaur):
+        self.dinosaur.health -= self.active_weapon 
+        
+
+    # Additional names of robots Ratchet and Bluestreak

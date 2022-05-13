@@ -7,4 +7,7 @@ class Dinosaur:
         
     def attack_robot(self, robot):
         robot.health -= self.attack_power
-        pass
+        
+
+
+# Additional names for other dinosaurs Velociraptor and Megalgon
